@@ -1,0 +1,27 @@
+{
+  "name": "adventofcode2019",
+  "version": "1.0.0",
+  "description": "AdventOfCode 2019",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufshakeel/adventofcode2019.git"
+  },
+  "keywords": [
+    "code",
+    "javascript",
+    "adventOfCode"
+  ],
+  "author": "Yusuf Shakeel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yusufshakeel/adventofcode2019/issues"
+  },
+  "homepage": "https://github.com/yusufshakeel/adventofcode2019#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
