@@ -22,8 +22,11 @@ What is the sum of the fuel requirements for all of the modules on your spacecra
 */
 const fuelMass = moduleMass => Math.floor(moduleMass / 3) - 2;
 
-const totalFuelForTheModules = modules => modules.reduce((total, currMass) => {
+const totalFuel = modules => modules.reduce((total, currMass) => {
     return total + fuelMass(currMass);
 }, 0);
 
-module.exports = totalFuelForTheModules;
+module.exports = {
+    fuelMass,
+    totalFuel
+};
