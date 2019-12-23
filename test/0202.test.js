@@ -6,6 +6,9 @@ test('Testing machine2 function', () => {
     expect(result.found).toBeTruthy();
     expect(result.noun).toBe(0);
     expect(result.verb).toBe(0);
+
+    const result2 = machine2([2,0,0,0,99], 10)
+    expect(result2.found).toBeFalsy();
 });
 
 test('0202 Answer', () => {
