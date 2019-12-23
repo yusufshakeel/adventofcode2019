@@ -104,11 +104,8 @@ const findIntersetingCoord = points => {
     return {found: true, coord: {x, y}};
 };
 
-const findManhattanDistance = routes => {
+const findIntersectingCoords = (wire1Coords, wire2Coords) => {
     let intersectingCoords = [];
-    const wire1Coords = getOccupiedCoords(routes[0]);
-    const wire2Coords = getOccupiedCoords(routes[1]);
-    
     for (let i = 0; i < wire1Coords.length - 1; i++) {
         for (let j = 1; j < wire2Coords.length - 1; j++) {
             let points = [];
@@ -132,13 +129,17 @@ const findManhattanDistance = routes => {
             }
         }
     }
-    
+    return intersectingCoords;
+};
+
+const findManhattanDistance = routes => {
+    const wire1Coords = getOccupiedCoords(routes[0]);
+    const wire2Coords = getOccupiedCoords(routes[1]);
+    const intersectingCoords = findIntersectingCoords(wire1Coords, wire2Coords);
     let distance = intersectingCoords.map(point => {
         return manhattanDistanceBetweenPoints({x:0, y:0}, point);
     });
-    
     distance = distance.sort((a,b) => a-b);
-    
     return distance[0];
 };
 
@@ -148,5 +149,6 @@ module.exports = {
     isBetweenPoints,
     getOccupiedCoords,
     findIntersetingCoord,
+    findIntersectingCoords,
     findManhattanDistance
 };
