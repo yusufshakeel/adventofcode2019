@@ -2,6 +2,7 @@ const {
     getArrayOfDigits,
     isContainingAtleastOnePair,
     isContainingEverAscendingDigits,
+    getPasswords,
     getPasswordCount
 } = require('../src/0401.js');
 
@@ -19,6 +20,10 @@ test('Testing isContainingAtleastOnePair function', () => {
 test('Testing isContainingEverAscendingDigits function', () => {
     expect(isContainingEverAscendingDigits(123456)).toBeTruthy();
     expect(isContainingEverAscendingDigits(123454)).toBeFalsy();
+})
+
+test('Testing getPasswords function', () => {
+    expect(getPasswords([100, 115])).toEqual([111,112,113,114,115]);
 })
 
 test('Testing getPasswordCount function', () => {
