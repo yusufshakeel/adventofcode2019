@@ -40,21 +40,26 @@ const isContainingEverAscendingDigits = number => {
     return true;
 };
 
-const getPasswordCount = range => {
+const getPasswords = range => {
     const start = range[0];
     const end = range[1];
-    let count = 0;
+    const passwords = [];
     for (let p = start; p <= end; p++) {
         if (isContainingAtleastOnePair(p) && isContainingEverAscendingDigits(p)) {
-            count++;
+            passwords.push(p);
         }
     }
-    return count;
+    return passwords;
+};
+
+const getPasswordCount = range => {
+    return getPasswords(range).length;
 };
 
 module.exports = {
     getArrayOfDigits,
     isContainingAtleastOnePair,
     isContainingEverAscendingDigits,
+    getPasswords,
     getPasswordCount
 };
